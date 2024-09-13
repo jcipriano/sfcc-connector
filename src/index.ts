@@ -119,6 +119,8 @@ connector.sync(async ({ models, isInitialSync, options: { accessToken, clientId,
     }
   }
 
+  console.log(sfccConfig);
+
   /** 
    * Invoke product search request
    * https://salesforcecommercecloud.github.io/commerce-sdk/classes/product.products.html#searchproducts

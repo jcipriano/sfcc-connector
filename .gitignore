@@ -3,3 +3,6 @@ node_modules
 .cache
 dev-model.gql
 .DS_Store
+
+# Local Netlify folder
+.netlify

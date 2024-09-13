@@ -6,17 +6,37 @@ import {
   CardTitle,
   ConnectConfigurationSurface
 } from "@netlify/sdk/ui/react/components";
+import { trpc } from "../trpc";
+import { useNetlifySDK } from "@netlify/sdk/ui/react";
+import { CommonDataSourceSchema, ConnectSettings } from "../../schema/settings-schema";
 
 export const ConnectConfiguration = () => {
-  const onSubmit = (values) => {
-    // Do something with form values
+  
+  const sdk = useNetlifySDK();
+  const baseInput = {
+    dataLayerId: sdk.context.dataLayerId!,
+    configurationId: sdk.context.configurationId ?? undefined,
+  };
+  const connectSettingsMutation = trpc.connectSettings.upsert.useMutation();
+
+  const onSubmit = async (data: ConnectSettings & CommonDataSourceSchema) => {
+    console.log(data);
+    await connectSettingsMutation.mutateAsync({
+      ...baseInput,
+      name: data.name,
+      prefix: data.prefix,
+      config: data,
+    });
+    sdk.requestTermination();
   };
 
   return (
     <ConnectConfigurationSurface>
       <Card>
         <CardTitle>Salesforce Commerce Cloud Data Source Configuration</CardTitle>
-        <Form onSubmit={onSubmit}>
+        <Form 
+          schema={ConnectSettings.merge(CommonDataSourceSchema)}
+          onSubmit={onSubmit}>
           <FormField label="Data Source Name" name="name" required />
               <FormField
                 label="Data Source Prefix"
@@ -28,7 +48,7 @@ export const ConnectConfiguration = () => {
               name="accessToken"
               type="text"
               label="Client Access Token"
-              helpText="Temorary"
+              helpText="Temporary. Remove for production."
               required
             />
             <FormField
