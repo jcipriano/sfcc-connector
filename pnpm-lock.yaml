@@ -21,6 +21,9 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@netlify/netlify-plugin-netlify-extension':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@types/react':
         specifier: ^18.3.5
         version: 18.3.5
@@ -1161,6 +1164,9 @@ packages:
 
   '@netlify/netlify-design-tokens@6.0.0':
     resolution: {integrity: sha512-ej601PfCL1xRAvUyZNgJ3r+LdaSI3i8w7EjfGkwjYlM8lpKzP9bZyLDmhhfJes0luq4jXDDPBIRs0aky/4seBA==}
+
+  '@netlify/netlify-plugin-netlify-extension@1.0.0':
+    resolution: {integrity: sha512-NFbHA4KzNnLSejnF5hNoP3HcvzHTr9Ew+APbtWwEpO2A0xaMc9mKm06CsgQ0ppYmfLm/kFpUXq2HKLrAsc/O/A==}
 
   '@netlify/node-cookies@0.1.0':
     resolution: {integrity: sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==}
@@ -8161,6 +8167,13 @@ snapshots:
 
   '@netlify/netlify-design-tokens@6.0.0': {}
 
+  '@netlify/netlify-plugin-netlify-extension@1.0.0':
+    dependencies:
+      moize: 6.1.6
+      outdent: 0.8.0
+      yaml: 2.5.1
+      zod: 3.23.8
+
   '@netlify/node-cookies@0.1.0': {}
 
   '@netlify/open-api@2.34.0': {}
@@ -9480,25 +9493,25 @@ snapshots:
 
   axios@0.21.4:
     dependencies:
-      follow-redirects: 1.15.9(debug@2.6.9)
+      follow-redirects: 1.15.9(debug@4.3.6)
     transitivePeerDependencies:
       - debug
 
   axios@0.24.0:
     dependencies:
-      follow-redirects: 1.15.9(debug@2.6.9)
+      follow-redirects: 1.15.9(debug@4.3.6)
     transitivePeerDependencies:
       - debug
 
   axios@0.25.0:
     dependencies:
-      follow-redirects: 1.15.9(debug@2.6.9)
+      follow-redirects: 1.15.9(debug@4.3.6)
     transitivePeerDependencies:
       - debug
 
   axios@1.7.7:
     dependencies:
-      follow-redirects: 1.15.9(debug@2.6.9)
+      follow-redirects: 1.15.9(debug@4.3.6)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -11397,7 +11410,7 @@ snapshots:
       '@types/follow-redirects': 1.14.4
       '@types/progress-stream': 2.0.5
       decompress-response: 7.0.0
-      follow-redirects: 1.15.9(debug@2.6.9)
+      follow-redirects: 1.15.9(debug@4.3.6)
       is-retry-allowed: 2.2.0
       progress-stream: 2.0.0
       tunnel-agent: 0.6.0
@@ -11741,7 +11754,7 @@ snapshots:
 
   http-proxy-middleware@0.20.0:
     dependencies:
-      http-proxy: 1.18.1
+      http-proxy: 1.18.1(debug@4.3.6)
       is-glob: 4.0.3
       lodash: 4.17.21
       micromatch: 4.0.8
@@ -11755,14 +11768,6 @@ snapshots:
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
-    transitivePeerDependencies:
-      - debug
-
-  http-proxy@1.18.1:
-    dependencies:
-      eventemitter3: 4.0.7
-      follow-redirects: 1.15.9(debug@2.6.9)
-      requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
 
