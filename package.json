@@ -8,9 +8,15 @@
     "dev": "netlify-extension dev -c"
   },
   "dependencies": {
-    "@netlify/sdk": "^2.2.0"
+    "@netlify/sdk": "^2.2.0",
+    "commerce-sdk": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "netlify-cli": "^17.34.3"
   }
 }

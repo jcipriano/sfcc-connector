@@ -4,8 +4,14 @@
     "module": "ES2022",
     "moduleResolution": "bundler",
     "strict": true,
-    "rootDir": "."
+    "rootDir": ".",
+    "jsx": "react-jsx"
   },
+  "include": [
+    "src/ui/**/*",
+    "src/server/**/*",
+    "src/functions/**/*",
+  ],
   "exclude": [
     "node_modules",
     "dist"
